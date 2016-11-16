@@ -1,0 +1,386 @@
+current directory: /home/jiangyue/ruby-2.3.1/workspace/learn-rails/vendor/bundle/ruby/2.3.0/gems/nio4r-1.2.1/ext/nio4r
+/usr/local/bin/ruby -r ./siteconf20161110-29922-1r4eda5.rb extconf.rb
+checking for unistd.h... yes
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_without_gvl()... yes
+checking for sys/select.h... yes
+checking for poll.h... yes
+checking for sys/epoll.h... yes
+checking for sys/event.h... no
+checking for port.h... no
+checking for sys/resource.h... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/jiangyue/ruby-2.3.1/workspace/learn-rails/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0-static/nio4r-1.2.1/mkmf.log
+
+current directory: /home/jiangyue/ruby-2.3.1/workspace/learn-rails/vendor/bundle/ruby/2.3.0/gems/nio4r-1.2.1/ext/nio4r
+make "DESTDIR=" clean
+
+current directory: /home/jiangyue/ruby-2.3.1/workspace/learn-rails/vendor/bundle/ruby/2.3.0/gems/nio4r-1.2.1/ext/nio4r
+make "DESTDIR="
+compiling monitor.c
+monitor.c: 在函数‘NIO_Monitor_initialize’中:
+monitor.c:103:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+     ev_io_init(&monitor->ev_io, NIO_Selector_monitor_callback, FPTR_TO_FD(fptr), monitor->interests);
+     ^
+monitor.c:103:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+monitor.c:103:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+monitor.c:103:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+compiling nio4r_ext.c
+In file included from nio4r_ext.c:7:0:
+../libev/ev.c:487:48: 警告：“/*”出现在注释中 [-Wcomment]
+ /*#define MIN_INTERVAL  0.00000095367431640625 /* 1/2**20, good till 2200 */
+ ^
+In file included from nio4r_ext.c:7:0:
+../libev/ev.c: 在函数‘ecb_binary32_to_binary16’中:
+../libev/ev.c:1273:13: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
+       if (e < (14 - 24)) /* might not be sharp, but is good enough */
+             ^
+In file included from nio4r_ext.c:7:0:
+../libev/ev.c: 在文件作用域：
+../libev/ev.c:1829:31: 警告：‘ev_default_loop_ptr’已初始化，却又被声明为‘extern’ [默认启用]
+   EV_API_DECL struct ev_loop *ev_default_loop_ptr = 0; /* needs to be initialised to make it a definition despite extern */
+                               ^
+../libev/ev.c: 在函数‘ev_time’中:
+../libev/ev.c:1869:3: 警告：ISO C90 不允许混合使用声明和代码 [-Wdeclaration-after-statement]
+   struct timeval tv;
+   ^
+../libev/ev.c: 在函数‘array_nextsize’中:
+../libev/ev.c:1938:19: 警告：在有符号和无符号整数表达式间比较 [-Wsign-compare]
+   if (elem * ncur > MALLOC_ROUND - sizeof (void *) * 4)
+                   ^
+../libev/ev.c: 在函数‘evpipe_init’中:
+../libev/ev.c:2388:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   if (!ev_is_active (&pipe_w))
+   ^
+In file included from ../libev/ev.c:2691:0,
+                 from nio4r_ext.c:7:
+../libev/ev_epoll.c: 在文件作用域：
+../libev/ev_epoll.c:238:1: 警告：‘static’没有出现在声明的开头 [-Wold-style-declaration]
+ int inline_size
+ ^
+../libev/ev_epoll.c:238:1: 警告：‘__inline__’没有出现在声明的开头 [-Wold-style-declaration]
+../libev/ev_epoll.c:263:1: 警告：‘static’没有出现在声明的开头 [-Wold-style-declaration]
+ void inline_size
+ ^
+../libev/ev_epoll.c:263:1: 警告：‘__inline__’没有出现在声明的开头 [-Wold-style-declaration]
+../libev/ev_epoll.c:270:1: 警告：‘static’没有出现在声明的开头 [-Wold-style-declaration]
+ void inline_size
+ ^
+../libev/ev_epoll.c:270:1: 警告：‘__inline__’没有出现在声明的开头 [-Wold-style-declaration]
+In file included from ../libev/ev.c:2694:0,
+                 from nio4r_ext.c:7:
+../libev/ev_poll.c:42:1: 警告：‘static’没有出现在声明的开头 [-Wold-style-declaration]
+ void inline_size
+ ^
+../libev/ev_poll.c:42:1: 警告：‘__inline__’没有出现在声明的开头 [-Wold-style-declaration]
+In file included from ../libev/ev.c:178:0,
+                 from nio4r_ext.c:7:
+../libev/ev_poll.c: 在函数‘poll_poll’中:
+../libev/ev_poll.c:110:77: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+         assert (("libev: poll() returned illegal result, broken BSD kernel?", p < polls + pollcnt));
+                                                                             ^
+In file included from ../libev/ev.c:2694:0,
+                 from nio4r_ext.c:7:
+../libev/ev_poll.c: 在文件作用域：
+../libev/ev_poll.c:129:1: 警告：‘static’没有出现在声明的开头 [-Wold-style-declaration]
+ int inline_size
+ ^
+../libev/ev_poll.c:129:1: 警告：‘__inline__’没有出现在声明的开头 [-Wold-style-declaration]
+../libev/ev_poll.c:142:1: 警告：‘static’没有出现在声明的开头 [-Wold-style-declaration]
+ void inline_size
+ ^
+../libev/ev_poll.c:142:1: 警告：‘__inline__’没有出现在声明的开头 [-Wold-style-declaration]
+In file included from ../libev/ev.c:2697:0,
+                 from nio4r_ext.c:7:
+../libev/ev_select.c:274:1: 警告：‘static’没有出现在声明的开头 [-Wold-style-declaration]
+ int inline_size
+ ^
+../libev/ev_select.c:274:1: 警告：‘__inline__’没有出现在声明的开头 [-Wold-style-declaration]
+../libev/ev_select.c:303:1: 警告：‘static’没有出现在声明的开头 [-Wold-style-declaration]
+ void inline_size
+ ^
+../libev/ev_select.c:303:1: 警告：‘__inline__’没有出现在声明的开头 [-Wold-style-declaration]
+In file included from nio4r_ext.c:7:0:
+../libev/ev.c:2713:1: 警告：‘static’没有出现在声明的开头 [-Wold-style-declaration]
+ int inline_size ecb_cold
+ ^
+../libev/ev.c:2713:1: 警告：‘__inline__’没有出现在声明的开头 [-Wold-style-declaration]
+../libev/ev.c: 在函数‘loop_init’中:
+../libev/ev.c:2917:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+       ev_prepare_init (&pending_w, pendingcb);
+       ^
+../libev/ev.c:2917:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:2917:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:2917:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:2920:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+       ev_init (&pipe_w, pipecb);
+       ^
+../libev/ev.c:2920:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:2920:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:2920:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:2921:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+       ev_set_priority (&pipe_w, EV_MAXPRI);
+       ^
+../libev/ev.c: 在函数‘ev_loop_destroy’中:
+../libev/ev.c:2948:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   if (ev_is_default_loop (EV_A) && ev_is_active (&childev))
+   ^
+../libev/ev.c:2955:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   if (ev_is_active (&pipe_w))
+   ^
+../libev/ev.c:2965:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   if (ev_is_active (&sigfd_w))
+   ^
+../libev/ev.c: 在函数‘loop_fork’中:
+../libev/ev.c:3058:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   if (ev_is_active (&pipe_w) && postfork != 2)
+   ^
+In file included from ../libev/ev.c:178:0,
+                 from nio4r_ext.c:7:
+../libev/ev.c: 在函数‘verify_watcher’中:
+../libev/ev.c:3100:49: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+   assert (("libev: watcher has invalid priority", ABSPRI (w) >= 0 && ABSPRI (w) < NUMPRI));
+                                                 ^
+../libev/ev.c:3103:59: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+     assert (("libev: pending watcher not on pending queue", pendings [ABSPRI (w)][w->pending - 1].w == w));
+                                                           ^
+../libev/ev.c: 在函数‘verify_heap’中:
+../libev/ev.c:3113:54: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+       assert (("libev: active index mismatch in heap", ev_active (ANHE_w (heap [i])) == i));
+                                                      ^
+../libev/ev.c:3114:48: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+       assert (("libev: heap condition violated", i == HEAP0 || ANHE_at (heap [HPARENT (i)]) <= ANHE_at (heap [i])));
+                                                ^
+../libev/ev.c:3115:47: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+       assert (("libev: heap at cache mismatch", ANHE_at (heap [i]) == ev_at (ANHE_w (heap [i]))));
+                                               ^
+../libev/ev.c: 在函数‘array_verify’中:
+../libev/ev.c:3126:46: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+       assert (("libev: active index mismatch", ev_active (ws [cnt]) == cnt + 1));
+                                              ^
+../libev/ev.c: 在函数‘ev_verify’中:
+../libev/ev.c:3144:47: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+     assert (("libev: negative fd in fdchanges", fdchanges [i] >= 0));
+                                               ^
+../libev/ev.c:3157:64: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+               assert (("libev: io watcher list contains a loop", w != w2));
+                                                                ^
+../libev/ev.c:3161:61: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+           assert (("libev: inactive fd watcher on anfd list", ev_active (w) == 1));
+                                                             ^
+../libev/ev.c:3162:65: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+           assert (("libev: fd mismatch between watcher and anfd", ((ev_io *)w)->fd == i));
+                                                                 ^
+In file included from nio4r_ext.c:7:0:
+../libev/ev.c: 在函数‘ev_default_loop’中:
+../libev/ev.c:3239:11: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+           ev_signal_init (&childev, childcb, SIGCHLD);
+           ^
+../libev/ev.c:3239:11: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:3239:11: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:3239:11: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:3240:11: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+           ev_set_priority (&childev, EV_MAXPRI);
+           ^
+In file included from ../libev/ev.c:178:0,
+                 from nio4r_ext.c:7:
+../libev/ev.c: 在函数‘timers_reify’中:
+../libev/ev.c:3344:93: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+               assert (("libev: negative ev_timer repeat value found while processing timers", w->repeat > 0.));
+                                                                                             ^
+../libev/ev.c: 在函数‘periodics_reify’中:
+../libev/ev.c:3406:90: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+               assert (("libev: ev_periodic reschedule callback returned time in the past", ev_at (w) >= ev_rt_now));
+                                                                                          ^
+In file included from nio4r_ext.c:7:0:
+../libev/ev.c: 在函数‘ev_backend_poll’中:
+../libev/ev.c:3551:1: 警告：在有返回值的函数中未发现 return 语句 [-Wreturn-type]
+ }
+ ^
+In file included from ../libev/ev.c:178:0,
+                 from nio4r_ext.c:7:
+../libev/ev.c: 在函数‘ev_run’中:
+../libev/ev.c:3568:62: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+   assert (("libev: ev_loop recursion during release detected", loop_done != EVBREAK_RECURSE));
+                                                              ^
+In file included from nio4r_ext.c:7:0:
+../libev/ev.c:3737:9: 警告：隐式声明函数‘rb_thread_call_without_gvl’ [-Wimplicit-function-declaration]
+         rb_thread_call_without_gvl(ev_backend_poll, (void *)&poll_args, RUBY_UBF_IO, 0);
+         ^
+../libev/ev.c:3752:13: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+             assert (("libev: pipe_w not active, but pipe not written", ev_is_active (&pipe_w)));
+             ^
+In file included from ../libev/ev.c:178:0,
+                 from nio4r_ext.c:7:
+../libev/ev.c:3752:70: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+             assert (("libev: pipe_w not active, but pipe not written", ev_is_active (&pipe_w)));
+                                                                      ^
+../libev/ev.c: 在函数‘ev_io_start’中:
+../libev/ev.c:3926:56: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+   assert (("libev: ev_io_start called with negative fd", fd >= 0));
+                                                        ^
+../libev/ev.c:3927:63: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+   assert (("libev: ev_io_start called with illegal event mask", !(w->events & ~(EV__IOFDSET | EV_READ | EV_WRITE))));
+                                                               ^
+../libev/ev.c:3936:62: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+   assert (("libev: ev_io_start called with corrupted watcher", ((WL)w)->next != (WL)w));
+                                                              ^
+../libev/ev.c: 在函数‘ev_io_stop’中:
+../libev/ev.c:3951:88: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+   assert (("libev: ev_io_stop called with illegal fd (must stay constant after start!)", w->fd >= 0 && w->fd < anfdmax));
+                                                                                        ^
+../libev/ev.c: 在函数‘ev_timer_start’中:
+../libev/ev.c:3971:75: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+   assert (("libev: ev_timer_start called with negative timer repeat value", w->repeat >= 0.));
+                                                                           ^
+../libev/ev.c: 在函数‘ev_timer_stop’中:
+../libev/ev.c:3999:53: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+     assert (("libev: internal timer heap corruption", ANHE_w (timers [active]) == (WT)w));
+                                                     ^
+../libev/ev.c: 在函数‘ev_periodic_start’中:
+../libev/ev.c:4061:78: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+       assert (("libev: ev_periodic_start called with negative interval value", w->interval >= 0.));
+                                                                              ^
+../libev/ev.c: 在函数‘ev_periodic_stop’中:
+../libev/ev.c:4093:56: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+     assert (("libev: internal periodic heap corruption", ANHE_w (periodics [active]) == (WT)w));
+                                                        ^
+../libev/ev.c: 在函数‘ev_signal_start’中:
+../libev/ev.c:4130:70: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+   assert (("libev: ev_signal_start called with illegal signal number", w->signum > 0 && w->signum < EV_NSIG));
+                                                                      ^
+../libev/ev.c:4133:73: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+   assert (("libev: a signal must not be attached to two different loops",
+                                                                         ^
+In file included from nio4r_ext.c:7:0:
+../libev/ev.c:4155:11: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+           ev_io_init (&sigfd_w, sigfdcb, sigfd, EV_READ);
+           ^
+../libev/ev.c:4155:11: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4155:11: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4155:11: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4156:11: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+           ev_set_priority (&sigfd_w, EV_MAXPRI);
+           ^
+In file included from ../libev/ev.c:178:0,
+                 from nio4r_ext.c:7:
+../libev/ev.c: 在函数‘ev_child_start’中:
+../libev/ev.c:4251:74: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+   assert (("libev: child watchers are only supported in the default loop", loop == ev_default_loop_ptr));
+                                                                          ^
+In file included from nio4r_ext.c:7:0:
+../libev/ev.c: 在函数‘infy_add’中:
+../libev/ev.c:4368:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   if (ev_is_active (&w->timer)) ev_ref (EV_A);
+   ^
+../libev/ev.c:4370:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   if (ev_is_active (&w->timer)) ev_unref (EV_A);
+   ^
+../libev/ev.c: 在函数‘infy_init’中:
+../libev/ev.c:4474:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+       ev_io_init (&fs_w, infy_cb, fs_fd, EV_READ);
+       ^
+../libev/ev.c:4474:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4474:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4474:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4475:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+       ev_set_priority (&fs_w, EV_MAXPRI);
+       ^
+../libev/ev.c: 在函数‘infy_fork’中:
+../libev/ev.c:4519:15: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+               if (ev_is_active (&w->timer)) ev_ref (EV_A);
+               ^
+../libev/ev.c:4521:15: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+               if (ev_is_active (&w->timer)) ev_unref (EV_A);
+               ^
+../libev/ev.c: 在函数‘ev_stat_start’中:
+../libev/ev.c:4595:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   ev_timer_init (&w->timer, stat_timer_cb, 0., w->interval ? w->interval : DEF_STAT_INTERVAL);
+   ^
+../libev/ev.c:4595:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4595:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4595:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4595:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4596:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   ev_set_priority (&w->timer, ev_priority (w));
+   ^
+../libev/ev.c: 在函数‘ev_stat_stop’中:
+../libev/ev.c:4628:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   if (ev_is_active (&w->timer))
+   ^
+In file included from ../libev/ev.c:178:0,
+                 from nio4r_ext.c:7:
+../libev/ev.c: 在函数‘ev_embed_start’中:
+../libev/ev.c:4830:60: 警告：逗号表达式的左操作数不起作用 [-Wunused-value]
+     assert (("libev: loop to be embedded is not embeddable", backend & ev_embeddable_backends ()));
+                                                            ^
+In file included from nio4r_ext.c:7:0:
+../libev/ev.c:4831:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+     ev_io_init (&w->io, embed_io_cb, backend_fd, EV_READ);
+     ^
+../libev/ev.c:4831:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4831:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4831:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4836:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   ev_set_priority (&w->io, ev_priority (w));
+   ^
+../libev/ev.c:4839:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   ev_prepare_init (&w->prepare, embed_prepare_cb);
+   ^
+../libev/ev.c:4839:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4839:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4839:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4840:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   ev_set_priority (&w->prepare, EV_MINPRI);
+   ^
+../libev/ev.c:4843:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   ev_fork_init (&w->fork, embed_fork_cb);
+   ^
+../libev/ev.c:4843:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4843:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:4843:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c: 在函数‘ev_once’中:
+../libev/ev.c:5053:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   ev_init (&once->io, once_cb_io);
+   ^
+../libev/ev.c:5053:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:5053:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:5053:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:5060:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+   ev_init (&once->to, once_cb_to);
+   ^
+../libev/ev.c:5060:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:5060:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:5060:3: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+../libev/ev.c:5063:7: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+       ev_timer_set (&once->to, timeout, 0.);
+       ^
+../libev/ev.c: 在文件作用域：
+../libev/ev.c:5179:27: 警告：“/*”出现在注释中 [-Wcomment]
+ /* EV_STAT     0x00001000 /* stat data changed */
+ ^
+../libev/ev.c:5180:27: 警告：“/*”出现在注释中 [-Wcomment]
+ /* EV_EMBED    0x00010000 /* embedded event loop needs sweep */
+ ^
+compiling selector.c
+selector.c: 在函数‘NIO_Selector_allocate’中:
+selector.c:102:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+     ev_init(&selector->timer, NIO_Selector_timeout_callback);
+     ^
+selector.c:102:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+selector.c:102:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+selector.c:102:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+selector.c:107:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+     ev_io_init(&selector->wakeup, NIO_Selector_wakeup_callback, selector->wakeup_reader, EV_READ);
+     ^
+selector.c:107:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+selector.c:107:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+selector.c:107:5: 警告：提领类型双关的指针将破坏强重叠规则 [-Wstrict-aliasing]
+linking shared-object nio4r_ext.so
+
+current directory: /home/jiangyue/ruby-2.3.1/workspace/learn-rails/vendor/bundle/ruby/2.3.0/gems/nio4r-1.2.1/ext/nio4r
+make "DESTDIR=" install
+/bin/install -c -m 0755 nio4r_ext.so ./.gem.20161110-29922-4ou0m5

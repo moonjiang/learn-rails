@@ -1,0 +1,15 @@
+current directory: /home/jiangyue/ruby-2.3.1/workspace/learn-rails/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+/usr/local/bin/ruby -r ./siteconf20161110-29922-1ez8med.rb extconf.rb
+creating Makefile
+
+current directory: /home/jiangyue/ruby-2.3.1/workspace/learn-rails/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /home/jiangyue/ruby-2.3.1/workspace/learn-rails/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /home/jiangyue/ruby-2.3.1/workspace/learn-rails/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" install
+/bin/install -c -m 0755 debug_inspector.so ./.gem.20161110-29922-14cxz8a
