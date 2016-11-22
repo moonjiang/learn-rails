@@ -57,3 +57,8 @@ group :development do
   gem 'better_errors'
   gem 'rails_layout'
 end
+
+#mysql2
+gem 'mysql2'
+
+
