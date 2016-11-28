@@ -1,5 +1,7 @@
 class VisitorsController < ApplicationController
  def new
   @owner = Owner.new
- end
+  flash.now[:notice] = 'Welcome!'
+  flash.now[:altert] = 'My birthday is soon'
+end
  end
