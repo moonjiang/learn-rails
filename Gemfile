@@ -58,6 +58,8 @@ group :development do
   gem 'rails_layout'
 end
 
+gem  'simple_form'
+
 #mysql2
 gem 'mysql2'
 
